@@ -15,7 +15,17 @@ class HandTracker:
     
     def draw_landmarks(self, frame, results):
         if results.multi_hand_landmarks:
-            for id, lm in enumerate(hand_landmarks.landmark):
-                print(id, lm.x, lm.y)
             for hand_landmarks in results.multi_hand_landmarks:
-                self.mp_draw.draw_landmarks(frame,hand_landmarks,self.mp_hands.HAND_CONNECTIONS)
+
+                '''# Print landmark coordinates
+                for id, lm in enumerate(hand_landmarks.landmark):
+                    print(id, lm.x, lm.y)'''
+
+                # Draw landmarks
+                self.mp_draw.draw_landmarks(
+                    frame,
+                    hand_landmarks,
+                    self.mp_hands.HAND_CONNECTIONS
+                )
+
+        return frame
