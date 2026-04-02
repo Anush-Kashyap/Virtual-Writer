@@ -1,9 +1,7 @@
 import cv2
 from hand_tracking import HandTracker
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
-
-print("Camera opened:", cap.isOpened())
+cap = cv2.VideoCapture(0)
 
 tracker = HandTracker()
 while True:
